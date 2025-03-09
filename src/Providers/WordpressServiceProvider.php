@@ -20,6 +20,15 @@ class WordpressServiceProvider extends ServiceProvider
         $this->app->singleton('wordpress-integration', function () {
             return new WordpressService();
         });
+
+        $this->registerLivewireComponents();
+    }
+
+    protected function registerLivewireComponents()
+    {
+        $this->callAfterResolving(BladeCompiler::class, function () {
+            Livewire::component('create-wordpress-credentials', CreateWordpressCredential::class);
+        });
     }
 
     /**
@@ -37,7 +46,7 @@ class WordpressServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../../resources/views/vendor/wordpress', 'wordpress');
 
         // Registrar el componente Livewire (compatibilidad con Livewire 3)
-        Livewire::component('wordpress-credentials-form', CreateWordpressCredential::class);
+        // Livewire::component('wordpress-credentials-form', CreateWordpressCredential::class);
 
         // Publicar archivos de configuración
         $this->publishes([
