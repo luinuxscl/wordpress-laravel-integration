@@ -3,7 +3,9 @@
 namespace Luinuxscl\WordpressIntegration\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Luinuxscl\WordpressIntegration\Services\WordpressService;
+use Luinuxscl\WordpressIntegration\Http\Livewire\CreateWordpressCredential;
 
 class WordpressServiceProvider extends ServiceProvider
 {
@@ -33,6 +35,9 @@ class WordpressServiceProvider extends ServiceProvider
 
         // Cargar vistas con namespace 'wordpress'
         $this->loadViewsFrom(__DIR__ . '/../../resources/views/vendor/wordpress', 'wordpress');
+
+        // Registrar el componente Livewire (compatibilidad con Livewire 3)
+        Livewire::component('wordpress-credentials-form', CreateWordpressCredential::class);
 
         // Publicar archivos de configuración
         $this->publishes([

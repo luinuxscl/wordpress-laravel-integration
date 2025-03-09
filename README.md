@@ -76,6 +76,20 @@ fetch('/wordpress/posts', {
 }).then(response => response.json()).then(data => console.log(data));
 ```
 
+## ✅ Uso del Componente Livewire
+Este package incluye un componente Livewire para gestionar credenciales de WordPress de manera interactiva.
+
+### 📌 **Cómo usarlo**
+1. Asegúrate de que **Livewire** está instalado en tu proyecto:
+   ```bash
+   composer require livewire/livewire
+   ```
+2. Usa el componente en cualquier vista Blade:
+   ```blade
+   <livewire:wordpress-credentials-form />
+   ```
+3. El componente mostrará un formulario interactivo para agregar credenciales de WordPress.
+
 ## ✅ Pruebas
 Este package incluye pruebas con PHPUnit y Orchestra Testbench. Para ejecutarlas, usa:
 
