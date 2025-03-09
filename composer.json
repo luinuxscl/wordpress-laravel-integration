@@ -1,0 +1,40 @@
+{
+    "name": "luinuxscl/wordpress-laravel-integration",
+    "description": "Package para integrar WordPress con Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luis Sepulveda",
+            "email": "lsepulveda@outlook.com",
+            "homepage": "https://like.cl",
+            "role": "developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Luinuxscl\\WordpressIntegration\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Luinuxscl\\WordpressIntegration\\Providers\\WordpressServiceProvider"
+            ],
+            "aliases": {
+                "WordpressIntegration": "Luinuxscl\\WordpressIntegration\\Facades\\WordpressIntegration"
+            }
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "illuminate/support": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
