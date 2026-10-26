@@ -102,3 +102,7 @@ Si deseas mejorar este package, envía un Pull Request en [GitHub](https://githu
 
 ## 📄 Licencia
 Este package está disponible bajo la licencia **MIT**.
+
+## Licencia
+
+MIT © Luis Sepúlveda. Ver [LICENSE](LICENSE).
